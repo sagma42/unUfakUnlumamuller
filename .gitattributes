@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 # Auto detect text files and perform LF normalization
 * text=auto
+=======
+vd/*.mp4 filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 943a792 (Initialize repo and add LFS tracking)
