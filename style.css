@@ -1,0 +1,294 @@
+/*-------------------------------------------------------------*/
+/* Genel Ayarlar */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  /*-------------------------------------------------------------*/
+  /* Header */
+  nav{
+    display: none;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    background-color: #E67514;
+    padding-left: 20px;
+    padding-right: 40px;
+    opacity: 1;
+    z-index: 3;
+  }
+  
+
+  .topRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 15px;
+    text-align: right;
+    font-size: 23px;
+    z-index: 10;
+    color: #212121;
+  }
+  
+  .whatsappUlasim {
+    position: relative;
+    right: 30px;
+  }
+  
+  .withWhatsapp {
+    position: relative;
+    right: 15px;
+  }
+  
+  .fa-brands.fa-whatsapp.fa-3x {
+    position: absolute;
+    font-size: 35px;
+    right: 190px;
+    bottom: -4.3px;
+    z-index: 4;
+    cursor: none;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .telNo {
+    color: black;
+    font-size: 25px;
+    position: relative;
+    left: 20px;
+  }
+  
+  .telNo:hover {
+    transition: 1.2s;
+    color: #06923E;
+    cursor: pointer;
+  }
+  
+  .logo1 {
+    width: 90px !important;
+    height: auto !important;
+  }
+  
+  .logo1:hover {
+    cursor: pointer;
+    width: 95px !important;
+    height: auto !important;
+  }
+  
+  .flex {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 60px;
+    font-size: 19px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #212121;
+  }
+  
+  a:hover {
+    position: static;
+    transform: scale(1.15);
+    transition: .5s;
+    color: #06923E;
+    text-shadow: 3px 1px 7px #212121;
+  }
+  
+  /*-------------------------------------------------------------*/
+  /* Main */
+  
+  .ana {
+    background-color: red;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .video-background iframe {
+    position: absolute;
+    border: none;
+    pointer-events: none; /* tıklamayı engeller */
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .bG {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* margin yerine gap kullanımı */
+    padding: 20px;
+  }
+  
+  .box1, .box2, .box3, .box4, .box5, .box6 {
+    position: relative; /* Kutuların pozisyonu relative olmalı */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 350px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease; /* Hover efekti için */
+  }
+  
+  .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover {
+    transform: translateY(-5px); /* Hafif hover efekti */
+  }
+  
+  .hepsiSpan {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  
+  /* Kutuların içindeki yazının görünürlüğü */
+  .hepsiSpan {
+    color: #06923E;
+    font-size: 24px;
+    text-shadow:
+      -.75px -.75px 0 #212121,
+      .75px -.75px 0 #212121,
+      -.75px  .75px 0 #212121,
+      .75px  .75px 0 #212121;
+  }
+  
+  /* Hover animasyonu */
+  .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover {
+    animation: moveBox 1.2s ease-in-out infinite;
+  }
+  
+  /* Hover efekti animasyonu */
+  @keyframes moveBox {
+    0%   { transform: translate(0, 2px); }
+    20%  { transform: translate(0, -4px); }
+    40%  { transform: translate(0, 2px); }
+    60%  { transform: translate(0, -4px); }
+    80%  { transform: translate(0, 2px); }
+    90%  { transform: translate(0, -4px); }
+    100% { transform: translate(0, 0px); }
+  }
+
+  /*-------------------------------------------------------------*/
+  /* Footer */
+  
+  .footerdiv {
+    background-color: #E67514;
+    min-height: 110px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 5px;
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    z-index: 5;
+    opacity: .72;
+  }
+  
+  .logo1 {
+    display: flex;
+    float: right;
+  }
+  
+  .footerDes {
+    text-align: left;
+  }
+  
+  .telNoFooter {
+    color: black;
+    font-size: 20px;
+  }
+  
+  .telNoFooter:hover {
+    transition: 1.3s;
+    color: #06923E;
+    text-shadow: 3px 1px 7px #212121;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .flex, .topRight{
+    display: none;
+
+
+    .video-background {
+      position: fixed;
+      overflow: hidden;
+      z-index: -1;
+    }
+  
+    .video-background iframe {
+      position: absolute;
+      border: none;
+      pointer-events: none; /* tıklamayı engeller */
+      width: 100%;
+      height: 100%;
+      
+    }
+    
+}
+
+
+nav{
+display: flex;
+flex-direction: column;
+align-items: end;
+justify-content: flex-start;
+right: 0;
+}
+
+.boxes{
+    transform: scale(.95);
+}
+
+
+  }
+
+
+  

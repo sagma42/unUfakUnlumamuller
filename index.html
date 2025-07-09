@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unufak</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="./ph/unUfakLogo.png">
+</head>
+
+<body>
+
+  <!--Header Start-->
+  <header>
+    <a href="#anaSayfa">
+      <img class="logo1" src="./ph/unUfakLogo.png" alt="Logo">
+    </a>
+
+    <nav>
+        <a href="#anaSayfa"><h3>Ana Sayfa</h3></a>
+        <a href="#urunlerimiz"><h3>Ürünlerimiz</h3></a>
+        <a href="hakkimizda.html"><h3>Hakkımızda</h3></a>
+        <a href="#footer"><h3>İletişim ve Adres</h3></a>
+    </nav>
+
+    <div class="topRight">
+      <div></div>
+      <div class="whatsappUlasim">
+        <span class="withWhatsapp">Bize WhatsApp ile ulaşın:</span>
+        <span><i class="fa-brands fa-whatsapp fa-3x"></i></span>
+        <span onclick="copyJS()" id="copyJS" class="telNo">+90 535 422 19 98</span>
+      </div>
+    </div>
+    
+
+    <div id="anaSayfa" class="flex">
+      <a href="#anaSayfa"><h3>Ana Sayfa</h3></a>
+      <a href="#anaSayfa"><h3>Ürünlerimiz</h3></a>
+      <a href="hakkimizda.html"><h3>Hakkımızda</h3></a>
+      <a href="#footer"><h3>İletişim ve Adres</h3></a>
+    </div>
+
+
+  </header>
+  <!--Header End-->
+
+  <!--Main Start-->
+  <div class="ana">
+    <div class="bG">
+      <div class="video-background">
+        <iframe
+          src="https://www.youtube.com/embed/UfUrkPof4YY?autoplay=1&mute=1&controls=0&loop=1&playlist=UfUrkPof4YY&modestbranding=1&showinfo=0&rel=0"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+
+
+        
+       
+       <div id="urunlerimiz" class="boxes">
+            <div class="box1" style="background-image: url('./ph/bazlama.jpg');"><span class="hepsiSpan">Bazlama</span></div>
+            <div class="box2" style="background-image: url('./ph/kiymaliBorek.jpg');"><span class="hepsiSpan">Kıymalı Börek</span></div>
+            <div class="box3" style="background-image: url('./ph/sigaraBoregi.jpg');"><span class="hepsiSpan">Sigara Böreği</span></div>
+            <div class="box4" style="background-image: url('./ph/suboregi.jpg');"><span class="hepsiSpan">Su Böreği</span></div>
+            <div class="box5" style="background-image: url('./ph/zeytinliPogaca.jpg');"><span class="hepsiSpan">Poğaça</span></div>
+            <div class="box6" style="background-image: url('./ph/tepsiBoregi.jpg');"><span class="hepsiSpan">Tepsi Böreği</span></div>
+        </div>
+    </div>
+  </div>
+  <!--Main End-->
+
+  <!--Footer Start-->
+<div class="footerBG" style="background-color: black;">
+  <div id="footer" class="footerdiv">
+    <div class="footerDes">
+      İletişim İçin: unufakum@gmail.com
+      <br>
+      WhatsApp: <span class="telNoFooter" onclick="copyJS()" id="copyJS">+90 535 422 19 98</span>
+      <br>
+      Bizi Instagram'dan takip edin: unufakunlumamuller
+      <br>
+      Hakları UNufak Unlu Mamülleri'nindir.
+      <br>
+    </div>
+    <img class="logo1" src="./ph/unUfakLogo.png" alt="Logo">
+  </div>
+</div>
+  <!--Footer End-->
+
+  <script>
+
+    /*Phone number CopyPasterino*/    
+    
+    function copyJS() {
+        const yazi = document.getElementById("copyJS").innerText;
+        navigator.clipboard.writeText(yazi).then(() => {
+                alert("Kopyalandı: " + yazi);
+            }).catch(err => {
+                alert("Kopyalama başarısız!");
+                console.error(err);
+            });
+        }
+    
+    
+    /*Video Player Automatic Video Stuff*/
+    
+    
+    
+    // Sırayla oynatılacak 7 video dosyasının yolu (isimleri ve uzantıları sana göre olmalı)
+    const videoPlayer = document.getElementById("videoPlayer");
+    
+    const videoList = [
+      "./vd/1.mp4",
+      "./vd/2.mp4",
+      "./vd/3.mp4",
+      "./vd/4.mp4",
+      "./vd/5.mp4",
+      "./vd/6.mp4",
+      "./vd/7.mp4"
+    ];
+    
+    let index = 0;
+    
+    function playVideo() {
+      videoPlayer.src = videoList[index];
+      videoPlayer.play();
+    }
+    
+    videoPlayer.addEventListener("ended", () => {
+      index = (index + 1) % videoList.length; // 0 → 1 → 2 → ... → 6 → 0 döngüsü
+      playVideo();
+    });
+    
+    // İlk videoyu başlat
+    playVideo();
+    
+    </script>
+    </body>
+    
+    </html>
+    
+    
