@@ -118,31 +118,42 @@
   /* Main */
   
   .ana {
-    background-color: red;
     position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
+    background: none;
   }
 
 
-  .video-background {
+  .video-bg {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    z-index: -1;
-  }
-
-  .video-background iframe {
-    position: absolute;
-    border: none;
-    pointer-events: none; /* tıklamayı engeller */
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none; /* Sağ/sol tık, tıklama tamamen engellenir */
   }
+  
+  .video-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw; /* 16:9 oranı: 9/16 = 0.5625 */
+    pointer-events: none; /* Sağ/sol tık, tıklama tamamen engellenir */
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .video-bg iframe {
+      width: 177.78vh;   /* 100 * 16 / 9 */
+      height: 100vh;
+    }
+  }
+  
   
 
   .bG {
